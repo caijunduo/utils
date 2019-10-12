@@ -286,6 +286,6 @@ trait Judge
     public static function isRealUrl(string $url): bool
     {
         $headers = @get_headers($url);
-        return strpos($headers[0], '404') === false;
+        return !$headers ? false : strpos($headers[0], '404') === false;
     }
 }
