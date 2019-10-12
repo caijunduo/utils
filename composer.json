@@ -1,6 +1,7 @@
 {
   "name": "lonely345/utils",
   "description": "Common tool library",
+  "keywords": ["php","util","common"],
   "license": "MIT",
   "authors": [
     {
