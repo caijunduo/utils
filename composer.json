@@ -1,0 +1,29 @@
+{
+  "name": "lonely345/utils",
+  "description": "Common tool library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "lonely345",
+      "email": "1176048943@qq.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "php": ">=7.1",
+    "ext-json": "*",
+    "ext-iconv": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Utils\\": "src/",
+      "Utils\\Components\\": "src/Components/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Utils\\": "src/",
+      "Utils\\Components\\": "src/Components/"
+    }
+  }
+}
