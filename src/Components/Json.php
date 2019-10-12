@@ -10,6 +10,7 @@ trait Json
 {
     /**
      * Coded as JSON, Chinese is not included in the code
+     * @static
      * @param  mixed  $value  Data to be coded
      * @return string JSON
      */
@@ -20,6 +21,7 @@ trait Json
 
     /**
      * Decode JSON strings
+     * @static
      * @param  string  $json  JSON String
      * @return mixed Decoded data
      */

@@ -6,6 +6,7 @@ trait Num
 {
     /**
      * Acquiring Humanized Price
+     * @static
      * @param  int|float  $price
      * @return string
      */

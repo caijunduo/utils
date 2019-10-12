@@ -88,8 +88,9 @@ trait Judge
      */
     public static function isMobile()
     {
-        return preg_match('/NetFront|iPhone|MIDP-2.0|Opera Min|UCWEB|Android|Windows CE|SymbianOS/i',
-            $_SERVER['HTTP_USER_AGENT']);
+        $pattern = 'NetFront|iPhone|MIDP-2.0|Opera Min|';
+        $pattern .= 'UCWEB|Android|Windows CE|SymbianOS';
+        return preg_match("/{$pattern}/i", $_SERVER['HTTP_USER_AGENT']);
     }
 
     /**
@@ -124,7 +125,8 @@ trait Judge
      */
     public static function isUrl(string $url)
     {
-        return filter_var($url, FILTER_VALIDATE_URL, FILTER_FLAG_PATH_REQUIRED);
+        return filter_var($url, FILTER_VALIDATE_URL,
+            FILTER_FLAG_PATH_REQUIRED);
     }
 
     /**
@@ -204,7 +206,8 @@ trait Judge
      */
     public static function isAjax(): bool
     {
-        return isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) === 'xmlhttprequest';
+        return isset($_SERVER['HTTP_X_REQUESTED_WITH']) &&
+            strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) === 'xmlhttprequest';
     }
 
     /**

@@ -9,7 +9,8 @@ namespace Utils\Components;
 trait Http
 {
     /**
-     * Convert the array to an HTTP request parameter, without encoding, corresponding to http_build_query
+     * Convert the array to an HTTP request parameter,
+     * without encoding, corresponding to http_build_query
      * @static
      * @param  array  $args  Parameter array
      * @return string

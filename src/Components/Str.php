@@ -52,6 +52,7 @@ trait Str
 
     /**
      * Underline to Hump
+     * @static
      * @param  string  $string  Underline strings
      * @return string
      */
@@ -62,6 +63,7 @@ trait Str
 
     /**
      * Hump to Underline
+     * @static
      * @param  string  $string  Hump strings
      * @return string
      */
@@ -72,6 +74,7 @@ trait Str
 
     /**
      * Format byte size
+     * @static
      * @param  int  $size  Byte size
      * @param  int  $delimiter  A few decimal places
      * @return string
