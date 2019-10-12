@@ -276,4 +276,16 @@ trait Judge
     {
         return PATH_SEPARATOR != ':';
     }
+
+    /**
+     * Is it a real URL?
+     * @static
+     * @param  string  $url
+     * @return bool
+     */
+    public static function isRealUrl(string $url): bool
+    {
+        $headers = @get_headers($url);
+        return strpos($headers[0], '404') === false;
+    }
 }

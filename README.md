@@ -7,6 +7,9 @@
 - [x] `arrayMultipleSort` 二维数组排序
 - [x] `filterNullByArr` 过滤一维数组中为null的值
 - [x] `filterNullByMultipleArr` 过滤多维数组中为null的值
+- [x] `getMultiLayerArr` 通过`.`的方式获取多层数组
+- [x] `statisticsNum` 统计数组的值出现的次数，支持多个数组
+- [x] `arrayMultipleOrderBy` 多维数组的多次排序(效果类似MySQL的`ORDER BY`)
 
 ### 时间处理
 - [x] `millisecond` 获取毫秒时间戳
@@ -45,6 +48,7 @@
 - [x] `isUTF8` 字符串是否为UTF-8编码
 - [x] `isLinux` 是否为Linux
 - [x] `isWindows` 是否为Windows
+- [x] `isRealUrl` 是否为真实的URL(URL是否可以访问)
 
 ### 手机号处理
 - [x] `getMobileArea` 获取手机号的归属地

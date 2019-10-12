@@ -80,4 +80,77 @@ trait Arr
 
         return $array;
     }
+
+    /**
+     * Getting the values of multi-level arrays through points
+     * @static
+     * @param  array  $array
+     * @param  string  $names
+     * @return array|mixed|null
+     * @example key1.key2.key3 => $array[$key1][$key2][$key3]
+     */
+    public static function getMultiLayerArr(array $array, string $names = '')
+    {
+        $names = array_filter(explode('.', $names));
+        $tmp = $array;
+        foreach ($names as $name) {
+            $tmp = &$tmp[$name] ?? null;
+        }
+
+        return $tmp;
+    }
+
+    /**
+     * Statistics the number of occurrences of array values
+     * to support multiple arrays
+     * @static
+     * @return array
+     * @example statisticsNum($array1, $array2, $array3), 仅限一维数组
+     */
+    public static function statisticsNum()
+    {
+        $array = func_get_args();
+        $num = func_num_args();
+        $result = [];
+
+        for ($i = 0; $i < $num; $i++) {
+            foreach ($array[$i] as $item) {
+                if (isset($result[$item])) {
+                    $result[$item]++;
+                } else {
+                    $result[$item] = 1;
+                }
+            }
+        }
+
+        return $result;
+    }
+
+    /**
+     * Multidimensional array sorting, the first parameter needs to
+     * sort the array, the second parameter needs to sort the field,
+     * the third parameter. It's sort.
+     * @static
+     * @return mixed
+     * @example arrayMultipleOrderBy($list, 'age', SORT_DESC)
+     * @example arrayMultipleOrderBy($list, 'age', SORT_DESC, 'name', SORT_DESC)
+     */
+    public static function arrayMultipleOrderBy()
+    {
+        $args = func_get_args();
+        $data = array_shift($args);
+        foreach ($args as $idx => $field) {
+            if (is_string($field)) {
+                $tmp = [];
+                foreach ($data as $key => $row) {
+                    $tmp[$key] = $row[$field];
+                }
+                $args[$idx] = $tmp;
+            }
+        }
+        $args[] = &$data;
+        call_user_func_array('array_multisort', $args);
+
+        return array_pop($args);
+    }
 }
