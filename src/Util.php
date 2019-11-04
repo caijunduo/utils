@@ -11,7 +11,11 @@ use Utils\Components\{Arr,
     Mobile,
     Num,
     Paging,
-    Str};
+    Str
+};
+use Utils\Components\Oauth\{
+    WeChat
+};
 
 /**
  * Util Class
@@ -19,5 +23,10 @@ use Utils\Components\{Arr,
  */
 class Util
 {
-    use Arr, Date, Http, Ip, Json, Judge, Mobile, Num, Paging, Str;
+    // 基础
+    use Arr, Date, Http, Ip, Json, Judge, Mobile, Num, Str,
+        // 辅助
+        Paging,
+        // 第三方
+        WeChat;
 }
